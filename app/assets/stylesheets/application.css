@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+form {
+  margin: 15px 0px;
+  width: 115px;
+  height: 100px;
+  padding: 50px 50px;
+  padding-bottom: 115px;
+  border: 5px solid black;
+}
+
+
+
+body {
+    background-image: url("timthumb.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 300px;
+    margin: -90px auto;
+    padding-top: 100px;
+    font-family: "Brush Script MT";
+    font-size: 17px;
+}
+
+img{
+    margin: 0 28px;
+    width: 165px;
+}
