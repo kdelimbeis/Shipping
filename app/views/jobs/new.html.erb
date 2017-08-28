@@ -1,2 +1,24 @@
 <h1>Jobs#new</h1>
 <p>Find me in app/views/jobs/new.html.erb</p>
+
+
+<%= form_for(@job) do |f| %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <%= f.label :origin %>
+    <%= f.text_field :origin %>
+
+    <%= f.label :destination %>
+    <%= f.text_field :destination %>
+
+    <%= f.label :cost %>
+    <%= f.number_field :cost, class: :text_field, step: :any %>
+
+    <%= f.label :containers %>
+    <%= f.number_field :containers, class: :text_field, step: :any %>
+
+
+
+<%= f.submit %>
+  <% end %>
