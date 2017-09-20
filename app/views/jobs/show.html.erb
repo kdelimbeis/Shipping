@@ -1,6 +1,22 @@
 <h1>Jobs#show</h1>
 <p>Find me in app/views/jobs/show.html.erb</p>
 
+
+<%= check_box_tag(:pet_dog) %>
+<%= label_tag(:pet_dog, "I own a dog") %>
+<%= check_box_tag(:pet_cat) %>
+<%= label_tag(:pet_cat, "I own a cat") %>
+
+<%= text_field(:person, :name) %>
+
+
+<select name="city_id" id="city_id">
+  <option value="1">Lisbon</option>
+  <option value="2">Madrid</option>
+  ...
+  <option value="12">Berlin</option>
+</select>
+
 <p><%= @job.description %></p>
 <p><%= @job.origin %></p>
 <p><%= @job.destination %></p>

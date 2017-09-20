@@ -21,6 +21,16 @@ class JobsController < ApplicationController
     @job = Job.new
   end
 
+  def update
+      @job = Job.find(params[:id])
+      @job.update_attributes(job_params)
+      # @job.ships << ship.id
+      @ships = Ship.all
+
+      # redirect_to infos_path
+      redirect_to "/"
+  end
+
   private
 
     def job_params
