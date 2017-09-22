@@ -2,7 +2,7 @@
 <p>Find me in app/views/jobs/new.html.erb</p>
 
 
-<%= form_for(@job) do |f| %>
+<%= form_for :job, url: user_jobs_path do |f| %>
     <%= f.label :description %>
     <%= f.text_area :description %>
 
@@ -18,6 +18,8 @@
     <%= f.label :containers %>
     <%= f.number_field :containers, class: :text_field, step: :any %>
 
+    <%= f.label :ships %>
+    <%= select_tag "select_ships", options_from_collection_for_select(Ship.all, 'id', 'name',@job.ships.map{ |j| j.id }), :multiple => true %>
 
 
 <%= f.submit %>

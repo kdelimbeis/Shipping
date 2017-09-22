@@ -1,7 +1,7 @@
 <h1>Ships#new</h1>
 <p>Find me in app/views/ships/new.html.erb</p>
 
-<%= form_for(@ship) do |f| %>
+<%= form_for :ship, url: user_ships_path do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
 

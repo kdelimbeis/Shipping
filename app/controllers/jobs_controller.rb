@@ -11,9 +11,12 @@ class JobsController < ApplicationController
     @user = current_user
     @job = Job.new(job_params)
     @job.user_id = @user.id
-    if @job.save!
-    # @ship = Ship.create(name: params[:name], location: params[:location], capacity: params[:capacity], user_id: @user.id)
-    end
+
+    @ships = Ship.where(:id => params[:select_ships])
+    @job.ships << @ships
+
+      if @job.save!
+      end
     redirect_to "/"
   end
 
@@ -34,7 +37,7 @@ class JobsController < ApplicationController
   private
 
     def job_params
-      params.require(:job).permit(:description, :origin, :destination, :user_id, :cost, :containers)
+      params.require(:job).permit(:description, :origin, :destination, :cost, :containers, :ship_id)
     end
 
 

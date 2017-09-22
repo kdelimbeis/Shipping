@@ -12,9 +12,8 @@ class ShipsController < ApplicationController
     @ship = Ship.new(ship_params)
     @ship.user_id = @user.id
     if @ship.save!
-    # @ship = Ship.create(name: params[:name], location: params[:location], capacity: params[:capacity], user_id: @user.id)
     end
-    redirect_to "/"
+    redirect_to user_ships_path
   end
 
   def new
@@ -25,7 +24,7 @@ class ShipsController < ApplicationController
   private
 
     def ship_params
-      params.require(:ship).permit(:name, :location, :capacity, :user_id)
+      params.require(:ship).permit(:name, :location, :capacity)
     end
 
 

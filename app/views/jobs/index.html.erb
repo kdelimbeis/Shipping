@@ -1,9 +1,25 @@
 <h1>Jobs#index</h1>
 <p>Find me in app/views/jobs/index.html.erb</p>
-<% @jobs.each do |f| %>
-    <p><%= f.description %></p>
-    <p><%= f.origin %></p>
-    <p><%= f.destination %></p>
-    <p><%= f.cost %></p>
-    <p><%= f.containers %></p>
+
+<table>
+    <thead>
+        <th>Description</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Cost</th>
+        <th>Containers</th>
+        <th>Ships</th>
+    </thead>
+    <tbody>
+<% @jobs.each do |j| %>
+    <tr>
+        <td><%= j.description %></td>
+        <td><%= j.origin %></td>
+        <td><%= j.destination %></td>
+        <td><%= j.cost %></td>
+        <td><%= j.containers %></td>
+        <td><%= j.ship_ids %></td>
+    </tr>
 <% end %>
+    </tbody>
+</table>

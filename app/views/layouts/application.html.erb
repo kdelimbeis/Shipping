@@ -7,6 +7,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+      <nav>
+      <% if current_user %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home", user_jobs_path(current_user.id) %></li>
+          <li><%= link_to "Build Ship", new_user_ship_path(current_user.id) %></li>
+          <li><%= link_to "New Job", new_user_job_path(current_user.id) %></li>
+        </ul>
+      <% end %>
+    </nav>
+
 
   <body>
     <img src="/assets/boat.png"/>
